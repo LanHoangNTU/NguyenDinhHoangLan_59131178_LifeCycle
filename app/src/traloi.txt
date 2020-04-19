@@ -1,0 +1,26 @@
+Câu 4:
+    Khi ứng dụng đang chạy và người dùng bấm vào nút Back:
+        + onPause() được gọi
+        + onStop() được gọi
+        + onDestroy() được gọi
+    Sau khi bấm vào nút Back và mở lại ứng dụng:
+        + onCreate() được gọi
+        + onStart() được gọi
+        + onResume() được gọi
+
+Câu 5:
+    Khi ứng dụng đang chạy và người dùng bấm vào nút Home:
+        + onPause() được gọi
+        + onStop() được gọi
+    Sau khi bấm vào nút Home và mở lại ứng dụng:
+        + onRestart() được gọi
+        + onStart() được gọi
+        + onResume() được gọi
+
+Câu 6:
+    + Nếu chỉ cần lưu lại thông tin của ứng dụng khi thì ta có thể thực hiện trong phương thức vòng đời onStop()
+vì khi thoát ứng dụng, khi bấm nút home hoặc bị ứng dụng khác che, onStop() đều được gọi.
+    + Nhưng onPause() là phương thức duy nhất đảm bảo được gọi trước khi tiến trình bị hủy, onStop() và onDestroy()
+có thể không được gọi, do đó nên sử dụng onPause() để lưu dữ liệu.
+    -> Kết luận: sử dụng onPause() để lưu thông tin và dữ liệu để khôi phục lại trạng thái hiển thị của ứng dụng
+    -> Lý do: onPause() là phương thức duy nhất đảm bảo được gọi.
